@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
 import { HomeComponent } from './components/home/home.component';
+import { IngresoRoutingModule } from './components/ingreso/ingreso-routing.module';
+import { NavbarModule } from './components/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    IngresoRoutingModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
