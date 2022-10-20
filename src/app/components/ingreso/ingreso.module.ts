@@ -8,7 +8,6 @@ import { PerfilesComponent } from './registro/perfiles/perfiles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormPacienteComponent } from './registro/form-paciente/form-paciente.component';
 import { FormEspecialistaComponent } from './registro/form-especialista/form-especialista.component';
-import { FormAdministradorComponent } from './registro/form-administrador/form-administrador.component';
 import { RecaptchaModule,RecaptchaFormsModule } from 'ng-recaptcha';
 
 @NgModule({
@@ -18,8 +17,7 @@ import { RecaptchaModule,RecaptchaFormsModule } from 'ng-recaptcha';
     FloatingButtonComponent,
     PerfilesComponent,
     FormPacienteComponent,
-    FormEspecialistaComponent,
-    FormAdministradorComponent
+    FormEspecialistaComponent
   ],
   imports: [
     CommonModule,
