@@ -6,8 +6,9 @@ export class Administrador{
     dni !: number;
     mail !: string;
     imagen !: string;
+    perfil !: string;
 
-    constructor(id : string,nombre : string,apellido : string,edad : number,dni : number,mail : string,imagen : string){
+    constructor(id : string,nombre : string,apellido : string,edad : number,dni : number,mail : string,imagen : string, perfil : string){
             this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -15,6 +16,7 @@ export class Administrador{
             this.dni = dni;
             this.mail = mail;
             this.imagen = imagen;
+            this.perfil = perfil;
     }
 
     toJSON(){
@@ -25,7 +27,8 @@ export class Administrador{
             edad : this.edad,
             dni : this.dni,
             mail : this.mail,
-            imagen : this.imagen
+            imagen : this.imagen,
+            perfil : this.perfil
         }
         return json;
     }

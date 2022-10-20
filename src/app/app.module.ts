@@ -12,12 +12,17 @@ import { BienvenidoComponent } from './components/bienvenido/bienvenido.componen
 import { HomeComponent } from './components/home/home.component';
 import { IngresoRoutingModule } from './components/ingreso/ingreso-routing.module';
 import { NavbarModule } from './components/navbar/navbar.module';
+import { ErrorComponent } from './components/error/error.component';
+import { RecaptchaModule,RecaptchaFormsModule } from 'ng-recaptcha';
+import { HabilitarEspecialistasComponent } from './components/habilitar-especialistas/habilitar-especialistas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidoComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent,
+    HabilitarEspecialistasComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { NavbarModule } from './components/navbar/navbar.module';
     HttpClientModule,
     AngularFireStorageModule,
     IngresoRoutingModule,
-    NavbarModule
+    NavbarModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

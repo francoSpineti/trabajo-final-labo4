@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IngresoComponent } from './ingreso.component';
+import { LoginComponent } from './login/login.component';
+import { FormEspecialistaComponent } from './registro/form-especialista/form-especialista.component';
+import { FormPacienteComponent } from './registro/form-paciente/form-paciente.component';
+import { RegistroComponent } from './registro/registro.component';
 
-const routes: Routes = [{ path: '', component: IngresoComponent }];
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'form-paciente', component: FormPacienteComponent },
+  { path: 'form-especialista', component: FormEspecialistaComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

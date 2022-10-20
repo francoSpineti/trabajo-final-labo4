@@ -8,9 +8,10 @@ export class Especialista{
     mail !: string;   
     imagen !: string;
     emailVerificado !: boolean;
+    perfil !: string;
 
     constructor(id : string,nombre : string,apellido : string,edad : number,dni : number,especialidades : Array<string>,
-        mail : string,imagen : string, emailVerificado : boolean){
+        mail : string,imagen : string, emailVerificado : boolean, perfil : string){
             this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -19,7 +20,8 @@ export class Especialista{
             this.especialidades = especialidades;
             this.mail = mail;
             this.imagen = imagen;
-            this.emailVerificado = emailVerificado
+            this.emailVerificado = emailVerificado;
+            this.perfil = perfil;
     }
 
     toJSON(){
@@ -32,7 +34,8 @@ export class Especialista{
             especialidades : this.especialidades,
             mail : this.mail,
             imagen : this.imagen,
-            emailVerificado : this.emailVerificado
+            emailVerificado : this.emailVerificado,
+            perfil : this.perfil
         }
         return json;
     }

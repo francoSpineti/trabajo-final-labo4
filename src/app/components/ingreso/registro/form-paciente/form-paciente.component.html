@@ -1,0 +1,119 @@
+<div class="container" style="align-content: center;" id="reboteIn_izquierda">
+    <main>
+        <br>
+        <h2>Alta Paciente</h2>
+        <br>
+        <div class="row g-5">
+            <div class="col-md-7 col-lg-8">
+                <form class="needs-validation" [formGroup]="formGroup" (ngSubmit)="crearPaciente()">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="nombre"
+                                formControlName="nombre">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['nombre'].errors?.['required'] && formGroup.controls['nombre'].touched">El
+                                nombre es requerido</small>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido"
+                                formControlName="apellido">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['apellido'].errors?.['required'] && formGroup.controls['apellido'].touched">El
+                                apellido es requerido</small>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="username" class="form-label">Mail</label>
+                            <div class="input-group has-validation">
+                                <input type="email" class="form-control" id="mail" placeholder="mail@ejemplo.com"
+                                    formControlName="mail">
+                                <small class="invalid"
+                                    *ngIf="formGroup.controls['mail'].errors?.['required'] && formGroup.controls['mail'].touched">El
+                                    mail es requerido</small>
+                                <small class="invalid"
+                                    *ngIf="formGroup.controls['mail'].errors?.['email'] && formGroup.controls['mail'].touched">El
+                                    formato es invalido</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="*************"
+                                formControlName="password">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['password'].errors?.['required'] && formGroup.controls['password'].touched">El
+                                password es requerido</small>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address" class="form-label">DNI</label>
+                            <input type="number" class="form-control" id="dni" placeholder="00000000"
+                                formControlName="dni">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['dni'].errors?.['required'] && formGroup.controls['dni'].touched">El
+                                dni es requerido</small>
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['dni'].errors?.['min'] || formGroup.controls['dni'].errors?.['max'] && formGroup.controls['dni'].touched">Dni
+                                incorrecto</small>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edad" placeholder="00" formControlName="edad">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['edad'].errors?.['required'] && formGroup.controls['edad'].touched">La
+                                edad es requerida</small>
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['edad'].errors?.['min'] || formGroup.controls['edad'].errors?.['max'] && formGroup.controls['edad'].touched">La
+                                edad debe estar entre 18 o 99 años.</small>
+                        </div>
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Obra Social</label>
+                            <input type="text" class="form-control" id="obraSocial" placeholder="Ej : Osde"
+                                formControlName="obraSocial">
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['obraSocial'].errors?.['required'] && formGroup.controls['obraSocial'].touched">La
+                                edad es requerida</small>
+                        </div>
+                        <div class="col-12">
+                            <label for="exampleFormControlFile1">Foto 1</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                                formControlName="imagenUno" (change)="mostrarImagen1($event)">
+                            <img [src]="imagen1" height="200"> <br />
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['imagenUno'].errors?.['required'] && formGroup.controls['imagenUno'].touched">Debe
+                                seleccionar una imagen.</small>
+                        </div>
+                        <div class="col-12">
+                            <label for="exampleFormControlFile1">Foto 2</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                                formControlName="imagenDos" (change)="mostrarImagen2($event)">
+                            <img [src]="imagen2" height="200"> <br />
+                            <small class="invalid"
+                                *ngIf="formGroup.controls['imagenDos'].errors?.['required'] && formGroup.controls['imagenDos'].touched">Debe
+                                seleccionar una imagen.</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <re-captcha (resolved)="resolved($event)" (error)="onError($event)" errorMode="handled"
+                    siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"></re-captcha>
+                    </div>
+
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" *ngIf="captcha"
+                        [disabled]="formGroup.invalid">Registrarse</button>
+                    <br><br>
+                    <button class="w-100 btn btn-primary btn-lg" routerLink="/ingreso/registro"
+                        (click)="limpiarForm()">Volver a selección de perfiles</button>
+                    <br><br>
+                    <button class="w-100 btn btn-primary btn-lg"  routerLink="/ingreso/login">Volver al
+                        Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

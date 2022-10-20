@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  adminLogueado !: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.adminLogueado = this.isAdmin();
   }
+
+  isAdmin(){
+    let obj = JSON.parse(localStorage.getItem('administrador')!);
+    return obj != null ? true : false;
+  }
+
 
 }

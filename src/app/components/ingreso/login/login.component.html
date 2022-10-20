@@ -1,0 +1,39 @@
+<!-- aca poner imagen -->
+<div id="back">
+    <canvas id="canvas" class="canvas-back"></canvas>
+    <div class="backLeft">
+    </div>
+  </div>
+  
+  <div id="slideBox">
+    <div class="topLayer">
+      <div class="right">
+        <div class="content">
+          <h2>Login</h2>
+          <form id="form-login" [formGroup]="formGroup" (ngSubmit)="login()">
+            <div class="form-element form-stack">
+              <label for="password-login" class="form-label">Email</label>
+              <input id="password-login" type="email"  formControlName="email">
+              <small class="invalid" *ngIf="formGroup.controls['email'].errors?.['required'] && formGroup.controls['email'].touched">El mail es requerido.</small>
+              <small class="invalid" *ngIf="formGroup.controls['email'].errors?.['email'] && formGroup.controls['email'].touched">El formato es invalido.</small>
+            </div>
+            <div class="form-element form-stack">
+              <label for="password-login" class="form-label">Password</label>
+              <input id="password-login" type="password" formControlName="contraseña">
+              <small class="invalid" *ngIf="formGroup.controls['contraseña'].errors?.['required'] && formGroup.controls['contraseña'].touched">La contraseña es requerida.</small>
+            </div>
+            <div class="form-element form-submit">
+              <button id="logIn" class="login" [disabled]="formGroup.invalid">Ingresar</button>
+              <button id="goRight" class="login off" routerLink="/ingreso/registro">Registro</button>
+              <button id="goRight" class="login off" routerLink="/bienvenido">Volver al inicio</button>
+              <app-floating-button></app-floating-button>
+            </div>
+            <br>
+            <!-- <div *ngIf="spiner">
+              <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

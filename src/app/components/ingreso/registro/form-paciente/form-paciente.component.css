@@ -1,0 +1,52 @@
+.container{    
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+#reboteIn_izquierda {
+  
+    font-family: Arial;
+    font-weight: bolder;
+    position: relative;
+  }
+  
+  /* Asignamos las animaciones */
+  
+  #reboteIn_izquierda {
+   
+    animation: reboteIn_izquierda 1s ;
+   
+  }
+  
+  
+  
+  /* Creamos la animación ReboteIn Izquierda (con keyframes) */
+  
+  @keyframes reboteIn_izquierda {
+   
+    0% {
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+    
+    50% {
+      
+      transform: translateX(30px);
+      opacity: 1;
+    }
+    
+    70% {
+      
+      transform: translateX(-10px);
+        
+    }
+    
+  }
+  
+  
+    
+  
+  
+  
+  
+  

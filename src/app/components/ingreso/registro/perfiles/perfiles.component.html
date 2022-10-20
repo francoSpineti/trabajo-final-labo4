@@ -1,0 +1,50 @@
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Seleccione una opción:</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <div class="row">
+        <!--   Primer imagen   -->
+            <div class="col">
+                <div class="card shadow-sm">
+                  <button (click)="cargarForm('paciente')"><img src="../assets/imagenes/paciente.jpg" width="100%" height="100%"/></button>
+                    <div class="card-body">
+                        <p class="card-text">Paciente</p>
+                        <div class="d-flex justify-content-between align-items-center"></div>
+                    </div>
+                </div>
+            </div>
+        <!--   Segunda imagen   -->
+            <div class="col">
+                <div class="card shadow-sm">
+                    <button (click)="cargarForm('especialista')" ><img src="../assets/imagenes/especialista.jpg" width="101%" height="101%"/></button>
+                    <div class="card-body">
+                        <p class="card-text">Especialista</p>
+                        <div class="d-flex justify-content-between align-items-center"></div>
+                    </div>
+                </div>
+            </div>
+
+         <!--   Tercera imagen   -->
+<!--           <div class="col">
+            <div class="card shadow-sm">
+                <button (click)="cargarForm('administrador')" ><img src="../assets/imagenes/administrador.jpg" width="101%" height="101%"/></button>
+                <div class="card-body">
+                    <p class="card-text">Administrador</p>
+                    <div class="d-flex justify-content-between align-items-center"></div>
+                </div>
+            </div>
+         </div> -->
+
+        </div>
+        <br><br>
+        <button class="w-100 btn btn-primary btn-lg"  routerLink="/ingreso/login">Volver al Login</button>
+    </div>
+</main>
+

@@ -8,9 +8,10 @@ export class Paciente{
     mail !: string;
     imagenUno !: string;
     imagenDos !: string;
+    perfil !: string;
 
     constructor(id : string,nombre : string,apellido : string,edad : number,dni : number,obraSocial : string,
-        mail : string,imagenUno : string, imagenDos : string){
+        mail : string,imagenUno : string, imagenDos : string, perfil : string){
             this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -20,6 +21,7 @@ export class Paciente{
             this.mail = mail;
             this.imagenUno = imagenUno;
             this.imagenDos = imagenDos;
+            this.perfil = perfil;
     }
 
     toJSON(){
@@ -32,7 +34,8 @@ export class Paciente{
             obraSocial : this.obraSocial,
             mail : this.mail,
             imagenUno : this.imagenUno,
-            imagenDos : this.imagenDos
+            imagenDos : this.imagenDos,
+            perfil : this.perfil
         }
         return json;
     }
